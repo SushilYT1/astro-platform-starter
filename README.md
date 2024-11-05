@@ -1,51 +1,141 @@
-# Astro on Netlify Platform Starter
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sushil YT 1 Official</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
-[Live Demo](https://astro-platform-starter.netlify.app/)
+        /* Layout */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+            color: #333;
+        }
 
-A modern starter based on Astro.js, Tailwind, daisyUI, and [Netlify Core Primitives](https://docs.netlify.com/core/overview/#develop) (Edge Functions, Image CDN, Blob Store).
+        header {
+            width: 100%;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            font-size: 24px;
+        }
 
-## Astro Commands
+        /* Navigation */
+        nav {
+            margin: 20px;
+            display: flex;
+            gap: 15px;
+        }
 
-All commands are run from the root of the project, from a terminal:
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+        nav a:hover {
+            background-color: #ddd;
+        }
 
-## Deploying to Netlify
+        /* Page Sections */
+        .page {
+            display: none; /* Hide all pages by default */
+            max-width: 800px;
+            width: 90%;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/astro-platform-starter)
+        /* Show the active page */
+        .active {
+            display: block;
+        }
 
-## Developing Locally
+        /* Footer */
+        footer {
+            margin-top: auto;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
 
-| Prerequisites             |
-| :------------------------ |
-| [Node.js](https://nodejs.org/) v18.14+. |
-| (optional) [nvm](https://github.com/nvm-sh/nvm) for Node version management. |
+<header>
+    Sushil YT 1 Official
+</header>
 
-1. Clone this repository, then run `npm install` in its root directory.
+<nav>
+    <a href="#" onclick="showPage('home')">Home</a>
+    <a href="#" onclick="showPage('about')">About</a>
+    <a href="#" onclick="showPage('services')">Services</a>
+    <a href="#" onclick="showPage('gallery')">Gallery</a>
+    <a href="#" onclick="showPage('contact')">Contact</a>
+</nav>
 
-2. For the starter to have full functionality locally (e.g. edge functions, blob store), please ensure you have an up-to-date version of Netlify CLI. Run:
+<!-- Page Sections -->
+<div id="home" class="page active">
+    <h2>Home</h2>
+    <p>Welcome to our website! This is the home page where you can find an introduction to our content.</p>
+</div>
 
-```
-npm install netlify-cli@latest -g
-```
+<div id="about" class="page">
+    <h2>About</h2>
+    <p>Learn more about us on this page. We are dedicated to providing the best service to our clients.</p>
+</div>
 
-3. Link your local repository to the deployed Netlify site. This will ensure you're using the same runtime version for both local development and your deployed site.
+<div id="services" class="page">
+    <h2>Services</h2>
+    <p>We offer a variety of services to meet your needs. Contact us to learn more about what we offer.</p>
+</div>
 
-```
-netlify link
-```
+<div id="gallery" class="page">
+    <h2>Gallery</h2>
+    <p>Check out some photos of our work and team. We’re proud of what we’ve accomplished.</p>
+</div>
 
-4. Then, run the Astro.js development server via Netlify CLI:
+<div id="contact" class="page">
+    <h2>Contact</h2>
+    <p>Get in touch with us. We’re here to help answer any questions you may have
 
-```
-netlify dev
-```
+Email :- sushillamichhane283@gmail.com</p>
+</div>
 
-If your browser doesn't navigate to the site automatically, visit [localhost:8888](http://localhost:8888).
+<footer>
+    &copy; 2024 . All rights reserved.
+</footer>
+
+<script>
+    // Function to show the selected page and hide others
+    function showPage(pageId) {
+        // Hide all pages
+        const pages = document.querySelectorAll('.page');
+        pages.forEach(page => page.classList.remove('active'));
+
+        // Show the selected page
+        document.getElementById(pageId).classList.add('active');
+    }
+</script>
+
+</body>
+</html>
